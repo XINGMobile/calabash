@@ -46,16 +46,16 @@ Public License.}
   spec.executables   = 'calabash'
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'clipboard'
   spec.add_dependency 'edn', '>= 1.0.6', '< 2.0'
+  spec.add_dependency 'escape', '>= 0.0.4', '< 1.0'
   spec.add_dependency 'geocoder', '>= 1.6.4', '< 2.0'
   spec.add_dependency 'httpclient', '~> 2.6'
-  spec.add_dependency 'escape', '>= 0.0.4', '< 1.0'
-  spec.add_dependency 'run_loop', ">= 2.2.4", "< 3.0"
-  spec.add_dependency 'clipboard'
+  spec.add_dependency 'rexml'
 
   # These dependencies should match the xamarin-test-cloud dependencies.
   spec.add_dependency 'rubyzip', '~> 2.3.0'
-  spec.add_dependency 'bundler', '~> 2.2.7'
+  spec.add_dependency 'bundler', '~> 2.5'
 
   # Run-loop should control the version.
   spec.add_dependency 'awesome_print'
@@ -68,8 +68,8 @@ Public License.}
 
   # Run-loop should control the version.
   spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'pry-nav'
+  spec.add_development_dependency 'pry-byebug'
+  # spec.add_development_dependency 'pry-nav'
 
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'guard-rspec'

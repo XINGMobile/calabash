@@ -15,7 +15,7 @@ module Calabash
           fail("No application given and env variable CAL_APP is not set.", :console) if application.nil?
         end
 
-        if File.exists?(application)
+        if File.exist?(application)
           extension = File.extname(application)
           application_path = File.expand_path(application)
 

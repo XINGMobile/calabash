@@ -14,7 +14,7 @@ module Calabash
 
         # @!visibility private
         def exists?
-          File.exists?(path)
+          File.exist?(path)
         end
 
         private

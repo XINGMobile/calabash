@@ -23,7 +23,7 @@ module Calabash
 
         if application.nil?
           fail('Must supply application as first parameter to build', :build)
-        elsif !File.exists?(application)
+        elsif !File.exist?(application)
           fail("File '#{application}' does not exist", :build)
         else
           extension = File.extname(application)

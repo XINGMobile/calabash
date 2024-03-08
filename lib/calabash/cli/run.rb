@@ -23,7 +23,7 @@ module Calabash
           application = @arguments.shift
         end
 
-        if File.exists?(application)
+        if File.exist?(application)
           extension = File.extname(application)
           application_path = File.expand_path(application)
 

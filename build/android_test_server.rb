@@ -13,11 +13,11 @@ module Calabash
       end
 
       def self.ensure_test_server_exists
-        fail(-1, Messages::TEST_SERVER_NOT_FOUND) unless File.exists?(test_server_directory)
+        fail(-1, Messages::TEST_SERVER_NOT_FOUND) unless File.exist?(test_server_directory)
       end
 
       def self.ensure_calabash_js_exists
-        fail(-1, Messages::CALABASH_JS_NOT_FOUND) unless File.exists?(calabash_js_directory)
+        fail(-1, Messages::CALABASH_JS_NOT_FOUND) unless File.exist?(calabash_js_directory)
       end
 
       def self.build_test_server
@@ -80,7 +80,7 @@ module Calabash
 
       def self.find_server_repo_or_raise
         calabash_server_dir = ENV['CALABASH_SERVER_PATH'] || File.join(File.dirname(__FILE__), '..', '..', 'calabash-android-server')
-        unless File.exist?(calabash_server_dir) && File.exists?(File.join(calabash_server_dir, "server", "calabash-js", "src"))
+        unless File.exist?(calabash_server_dir) && File.exist?(File.join(calabash_server_dir, "server", "calabash-js", "src"))
           raise %Q{\033[31m
 Expected to find the calabash-android-server repo at:
 

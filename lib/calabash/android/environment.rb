@@ -52,7 +52,7 @@ module Calabash
         if @@android_dependencies.has_key?(key)
           file = @@android_dependencies[key]
 
-          unless File.exists?(file)
+          unless File.exist?(file)
             raise "No such file '#{file}'"
           end
 
@@ -68,7 +68,7 @@ module Calabash
         elsif @@java_dependencies.has_key?(key)
           file = @@java_dependencies[key]
 
-          unless File.exists?(file)
+          unless File.exist?(file)
             raise "No such file '#{file}'"
           end
 
@@ -434,7 +434,7 @@ module Calabash
       def self.find_executable_on_path(executable)
         path_elements.each do |x|
           f = File.join(x, executable)
-          return f if File.exists?(f)
+          return f if File.exist?(f)
         end
 
         nil

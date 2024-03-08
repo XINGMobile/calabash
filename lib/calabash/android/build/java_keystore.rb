@@ -14,7 +14,7 @@ module Calabash
         def initialize(location, keystore_alias, store_password, key_password, options={})
           @logger = options[:logger] || Calabash::Logger.new
 
-          raise "No such keystore file '#{location}'" unless File.exists?(File.expand_path(location))
+          raise "No such keystore file '#{location}'" unless File.exist?(File.expand_path(location))
 
           if key_password.nil? || key_password.empty?
             key_password = store_password.dup
@@ -72,7 +72,7 @@ module Calabash
         # @!visibility private
         def sign_apk(apk_path, dest_path)
           raise "Cannot sign with a miss configured keystore" if errors
-          raise "No such file: #{apk_path}" unless File.exists?(apk_path)
+          raise "No such file: #{apk_path}" unless File.exist?(apk_path)
 
           # E.g. MD5withRSA or MD5withRSAandMGF1
           encryption = signature_algorithm_name.split('with')[1].split('and')[0]
@@ -110,7 +110,7 @@ module Calabash
         def self.read_keystore_with_default_password_and_alias(path)
           path = File.expand_path path
 
-          if File.exists? path
+          if File.exist? path
             keystore = nil
 
             begin

@@ -61,7 +61,7 @@ module IOS
     end
 
     def build(install_dir)
-      unless File.exists?(source_dir)
+      unless File.exist?(source_dir)
         git_clone
       end
 

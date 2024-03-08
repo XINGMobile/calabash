@@ -7,7 +7,7 @@ end
 Then(/^the screenshot has a number appended to the name$/) do
   regex = /screenshots\/test_run_(\d+)\/screenshot_(\d+)\.png/
   expect(@last_screenshot_path[regex, 0]).to be_truthy
-  expect(File.exists?(@last_screenshot_path)).to be_truthy
+  expect(File.exist?(@last_screenshot_path)).to be_truthy
 end
 
 When(/^I take a screenshot and specify the name$/) do
@@ -15,12 +15,12 @@ When(/^I take a screenshot and specify the name$/) do
 end
 
 Then(/^the screenshot is saved with that name in the default location$/) do
-  expect(File.exists?(@last_screenshot_path)).to be_truthy
+  expect(File.exist?(@last_screenshot_path)).to be_truthy
 end
 
 When(/^I take a screenshot and specify an absolute path$/) do
   dir = File.expand_path('./screenshots/absolute')
-  if File.exists?(dir)
+  if File.exist?(dir)
     FileUtils.rm_r(dir)
   end
 
@@ -29,13 +29,13 @@ When(/^I take a screenshot and specify an absolute path$/) do
 end
 
 Then(/^the screenshot is created where I specified$/) do
-  expect(File.exists?(@last_screenshot_path)).to be_truthy
+  expect(File.exist?(@last_screenshot_path)).to be_truthy
 end
 
 When(/^I take a screenshot and specify a relative path$/) do
   dir = './screenshots/relative'
 
-  if File.exists?(File.expand_path(dir))
+  if File.exist?(File.expand_path(dir))
     FileUtils.rm_r(File.expand_path(dir))
   end
 

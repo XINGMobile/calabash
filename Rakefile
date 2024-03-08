@@ -128,3 +128,7 @@ namespace :android do
   end
 end
 
+
+# refactored raketasks
+require_relative 'lib/calabash.rb'
+Dir['tasks/**/*.rb'].each { |file| require_relative file }
